@@ -1,5 +1,6 @@
 package src;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import src.gui.Dots;
@@ -11,6 +12,7 @@ public class Main
 	private static double height, width;
 	private static int[][] dotCoords;
 	private static boolean multiple;
+	private static BufferedImage processed;
 
 	public static void updateMenuVars(
 		double height,
@@ -25,7 +27,7 @@ public class Main
 	public static void updateDotsVars(int[][] dotCoords)
 	{
 		Main.dotCoords = dotCoords;
-		Algo.algo(dotCoords);
+		Main.processed = Algo.algo(dotCoords);
 	}
 
 	public static void main(String[] args) throws IOException

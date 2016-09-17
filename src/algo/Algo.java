@@ -1,17 +1,20 @@
 package src.algo;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import org.opencv.calib3d.Calib3d;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfInt;
+import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.MatOfPoint;
-import org.opencv.core.Size;
 import org.opencv.core.Point;
+import org.opencv.core.Scalar;
+import org.opencv.core.Size;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
-import org.opencv.core.MatOfPoint2f;
-import org.opencv.calib3d.Calib3d;
-import org.opencv.core.Scalar;
-import java.awt.image.BufferedImage;
 
 /** @class Algo
  *  @author Pavel Khokhlov <pkhokhlo@andrew.cmu.edu>
@@ -68,23 +71,19 @@ public class Algo
 		Core.fillConvexPoly(wallImg, wallPointsPoly, new Scalar(0));
 		// Add the warped picture to the wall
 		Core.add(wallImg, tmpImg, resImg);
-		// Writes resulting image TODO remove
-		Highgui.imwrite("src/img/result.jpg", resImg, new MatOfInt(95));
-
-		// http://stackoverflow.com/questions/27086120/convert-opencv-mat-
-		// object-to-bufferedimage
-		Imgproc.cvtColor(resImg, resImg, Imgproc.COLOR_RGB2GRAY, 0);
-
-		// Create an empty image in matching format
-		BufferedImage ret = new BufferedImage(
-			resImg.width(),
-			resImg.height(),
-			BufferedImage.TYPE_BYTE_GRAY
-		);
-/*
-		byte[] data
-			= ((DataBufferByte) ret.getRaster().getDataBuffer()).getData();
-		resImg.get(0, 0, data);*/
-		return ret;
+		try
+		{
+			// Write the image and immediately re-read it
+			// (too lazy to convert a Mat into a BufferedImage by "hand")
+			Highgui.imwrite("src/img/result.jpg", resImg, new MatOfInt(95));
+			return ImageIO.read(new File("src/img/result.jpg"));
+		}
+		catch (IOException e)
+		{
+			System.err.println("Re-reading the result failed");
+			System.exit(1);
+		}
+		System.out.println("Should never get here");
+		return null;
 	}
 }
