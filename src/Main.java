@@ -23,6 +23,8 @@ public class Main
 		Main.height = height;
 		Main.width = width;
 		Main.multiple = multiple;
+		Dots dots = new Dots();
+		dots.setVisible(true);
 	}
 
 	public static void updateDotsVars(int[][] dotCoords)
@@ -37,7 +39,5 @@ public class Main
 	{
 		Menu menu = new Menu();
 		menu.setVisible(true);
-		Dots dots = new Dots();
-		dots.setVisible(true);
 	}
 }
