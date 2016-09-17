@@ -11,9 +11,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import src.Main;
+
 public class Menu extends JFrame implements ActionListener
 {
-
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
