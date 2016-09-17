@@ -11,3 +11,9 @@ visualize some posters
 - jni
 - make
 - opencv
+
+## get it
+
+    $ git clone --recursive https://github.com/mrama/Hack-CMU-2016
+    $ cd Hack-CMU-2016
+    $ make
