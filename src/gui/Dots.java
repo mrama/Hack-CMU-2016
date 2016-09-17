@@ -76,7 +76,7 @@ public class Dots extends JFrame implements MouseListener
 	public void mousePressed(MouseEvent e)
 	{
 		dotCoords[clicks][0] = (int)(e.getX() * (1 / scaleFactor));
-		dotCoords[clicks][1] = (int)(e.getY() * (1 / scaleFactor));
+		dotCoords[clicks][1] = (int)(e.getY() * (1 / scaleFactor) - 75);
 		System.out.println("x: " + dotCoords[clicks][0]);
 		System.out.println("y: " + dotCoords[clicks][1]);
 		clicks++;
