@@ -2,7 +2,7 @@
 
 Simulate posters on a surface
 
-## dependencies
+## Dependencies
 
 - ant
 - cmake
@@ -12,7 +12,7 @@ Simulate posters on a surface
 - make
 - opencv
 
-## get it
+## Get it
 
     $ git clone --recursive https://github.com/mrama/Hack-CMU-2016
     $ cd Hack-CMU-2016
