@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import src.Main;
+import src.gui.Dots;
 
 public class Menu extends JFrame implements ActionListener
 {
@@ -19,15 +20,9 @@ public class Menu extends JFrame implements ActionListener
 	private JTextField textField;
 	private JTextField textField_1;
 	private JButton btnAddSinglePoster, btnAddMultiplePosters;
-	// true for multiple, false for single
-	private boolean multiple;
-	private double height, width;
 
 	public Menu()
 	{
-		height = 0;
-		width = 0;
-		multiple = false;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(425, 250, 448, 200);
 		contentPane = new JPanel();
@@ -51,11 +46,9 @@ public class Menu extends JFrame implements ActionListener
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-		height = Double.parseDouble(textField.getText());
-		width = Double.parseDouble(textField_1.getText());
-		Main.updateMenuVars(height, width, multiple);
+	public void actionPerformed(ActionEvent e) {
+		Dots dots = new Dots();
+		dots.setVisible(true);
 		this.dispose();
 	}
 }
