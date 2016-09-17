@@ -33,6 +33,7 @@ public class Dots extends JFrame implements MouseListener
 	private int clicks;
 	private int[][] dotCoords;
 	private double scaleFactor = 0.25;
+	private File file = null;
 
 	public Dots()
 	{
@@ -46,7 +47,6 @@ public class Dots extends JFrame implements MouseListener
 		contentPane.setLayout(null);
 
 		// pulls image
-		File file = null;
 		JFileChooser fileChooser = new JFileChooser();
 		FileNameExtensionFilter textFileOnlyFilter =
 			new FileNameExtensionFilter(".jpg", "jpg", "jpg");
@@ -92,7 +92,7 @@ public class Dots extends JFrame implements MouseListener
 
 		if (clicks == 4)
 		{
-			Main.updateDotsVars(dotCoords);
+			Main.updateDotsVars(file.getPath(), dotCoords);
 			this.dispose();
 		}
 	}
