@@ -30,10 +30,13 @@ public class Menu extends JFrame implements ActionListener
 			{
 				public void run()
 				{
-					try {
+					try
+					{
 						Menu frame = new Menu();
 						frame.setVisible(true);
-					} catch (Exception e) {
+					}
+					catch (Exception e)
+					{
 						e.printStackTrace();
 					}
 				}

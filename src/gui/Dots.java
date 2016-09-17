@@ -48,13 +48,17 @@ public class Dots extends JFrame implements MouseListener
 		// pulls image
 		File file = null;
 		JFileChooser fileChooser = new JFileChooser();
-		FileNameExtensionFilter textFileOnlyFilter = new FileNameExtensionFilter(".jpg", "jpg", "jpg");
+		FileNameExtensionFilter textFileOnlyFilter =
+			new FileNameExtensionFilter(".jpg", "jpg", "jpg");
 		fileChooser.setFileFilter(textFileOnlyFilter);
 		int returnVal = fileChooser.showOpenDialog(new JFrame());
-		if (returnVal == JFileChooser.APPROVE_OPTION) {}
 		file = fileChooser.getSelectedFile();
 		BufferedImage image = ImageIO.read(file);
-		Image resizedImage = image.getScaledInstance((int) (4640 * scaleFactor), (int) (3480 * scaleFactor), Image.SCALE_SMOOTH);
+		Image resizedImage = image.getScaledInstance(
+			(int) (4640 * scaleFactor),
+			(int) (3480 * scaleFactor),
+			Image.SCALE_SMOOTH
+		);
 		JLabel lblNewLabel1 = new JLabel(new ImageIcon(resizedImage));
 
 		// 4:3 aspect ratio
@@ -77,7 +81,8 @@ public class Dots extends JFrame implements MouseListener
 		System.out.println("y: " + dotCoords[clicks][1]);
 		clicks++;
 
-		if (clicks == 4) {
+		if (clicks == 4)
+		{
 			Main.updateDotsVars(dotCoords);
 			this.dispose();
 		}
