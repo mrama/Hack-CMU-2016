@@ -1,6 +1,6 @@
-# Hack-CMU-2016
+# PrePoster®
 
-visualize some posters
+Simulate posters on a surface
 
 ## dependencies
 
