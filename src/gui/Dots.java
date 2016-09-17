@@ -96,23 +96,15 @@ public class Dots extends JFrame implements MouseListener
 		}
 	}
 
-	// @Override
-	// public void mouseClicked(MouseEvent arg0) {
-	// 	// TODO Auto-generated method stub
-	// }
+	@Override
+	public void mouseClicked(MouseEvent arg0) {}
 
-	// @Override
-	// public void mouseEntered(MouseEvent arg0) {
-	// 	// TODO Auto-generated method stub
-	// }
+	@Override
+	public void mouseEntered(MouseEvent arg0) {}
 
-	// @Override
-	// public void mouseExited(MouseEvent arg0) {
-	// 	// TODO Auto-generated method stub
-	// }
+	@Override
+	public void mouseExited(MouseEvent arg0) {}
 
-	// @Override
-	// public void mouseReleased(MouseEvent arg0) {
-	// 	// TODO Auto-generated method stub
-	// }
+	@Override
+	public void mouseReleased(MouseEvent arg0) {}
 }
