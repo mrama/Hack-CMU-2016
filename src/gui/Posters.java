@@ -29,17 +29,21 @@ public class Posters extends JFrame implements ActionListener
 		// double scaleFactor = 0.25;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1420, 1080);
-		double scaleFactor = 0.75 * (bi.getHeight() < bi.getWidth() ? (1.0*this.getWidth())/bi.getWidth() : (1.0*this.getHeight())/bi.getHeight());
+		double scaleFactor = 0.75 * (
+			bi.getHeight() < bi.getWidth()
+			? (1.0 * this.getWidth()) / bi.getWidth()
+			: (1.0 * this.getHeight()) / bi.getHeight()
+		);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		Image image = bi.getScaledInstance(
-				(int) (4640 * 0.75*scaleFactor),
-				(int) (3480 * 0.75*scaleFactor),
-					Image.SCALE_SMOOTH
-				);
+			(int) (4640 * 0.75*scaleFactor),
+			(int) (3480 * 0.75*scaleFactor),
+			Image.SCALE_SMOOTH
+		);
 		JLabel lblNewLabel = new JLabel(new ImageIcon(image));
 		lblNewLabel.setBounds(
 			90,

@@ -63,7 +63,6 @@ public class Menu extends JFrame implements ActionListener
 		btnAddSinglePoster.addActionListener(this);
 		btnAddSinglePoster.setBounds(135, 188, 190, 41);
 		contentPane.add(btnAddSinglePoster);
-
 	}
 
 	@Override
