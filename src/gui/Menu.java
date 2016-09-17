@@ -10,6 +10,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
 
 import src.Main;
 import src.gui.Dots;
@@ -23,6 +27,18 @@ public class Menu extends JFrame implements ActionListener
 
 	public Menu()
 	{
+		JOptionPane.showMessageDialog(
+			null,
+			"Welcome to PrePoster®!\n" +
+			"Choose a poster image."
+		);
+		JFileChooser fileChooser = new JFileChooser();
+		FileNameExtensionFilter textFileOnlyFilter =
+			new FileNameExtensionFilter(".jpg", "jpg", "jpg");
+		fileChooser.setFileFilter(textFileOnlyFilter);
+		fileChooser.showOpenDialog(new JFrame());
+		File file = fileChooser.getSelectedFile();
+		Main.posterPath = file.getPath();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(425, 250, 448, 200);
 		contentPane = new JPanel();
@@ -30,13 +46,13 @@ public class Menu extends JFrame implements ActionListener
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel welcome
-			= new JLabel("Welcome to PrePoster®.");
-		welcome.setBounds(50, 0, 300, 50);
-		contentPane.add(welcome);
+		// JLabel welcome
+		// 	= new JLabel("Welcome to PrePoster®.");
+		// welcome.setBounds(50, 0, 300, 50);
+		// contentPane.add(welcome);
 		JLabel instruct
 			= new JLabel("Please select an image for the background.");
-		instruct.setBounds(50, 20, 300, 50);
+		instruct.setBounds(50, 0, 300, 50);
 		contentPane.add(instruct);
 
 		btnAddSinglePoster = new JButton("OK");
@@ -46,7 +62,8 @@ public class Menu extends JFrame implements ActionListener
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e)
+	{
 		Dots dots = new Dots();
 		dots.setVisible(true);
 		this.dispose();

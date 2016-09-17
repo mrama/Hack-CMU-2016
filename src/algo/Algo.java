@@ -23,13 +23,16 @@ import org.opencv.imgproc.Imgproc;
  */
 public class Algo
 {
-	public static BufferedImage algo(String path, int[][] wallCoords)
-	{
+	public static BufferedImage algo(
+		String posterPath,
+		String wallPath,
+		int[][] wallCoords
+	) {
 		// Load OpenCV
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
 		// Poster image
-		Mat posterImg = Highgui.imread("src/img/poster/02.jpg");
+		Mat posterImg = Highgui.imread(posterPath);
 		Size posterSize = posterImg.size();
 
 		// Border of the poster, used for the point correspondence
@@ -42,7 +45,7 @@ public class Algo
 		);
 
 		// Destination image
-		Mat wallImg = Highgui.imread(path);
+		Mat wallImg = Highgui.imread(wallPath);
 
 		// Points on the wall where we map the poster
 		// top left, top right, bottom left, bottom right

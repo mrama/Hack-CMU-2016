@@ -7,13 +7,15 @@ import src.gui.Menu;
 import src.gui.Posters;
 import src.algo.Algo;
 
+
 public class Main
 {
 	private static BufferedImage processed;
+	public static String posterPath;
 
 	public static void updateDotsVars(String path, int[][] dotCoords)
 	{
-		Main.processed = Algo.algo(path, dotCoords);
+		Main.processed = Algo.algo(Main.posterPath, path, dotCoords);
 		Posters posters = new Posters(Main.processed);
 		posters.setVisible(true);
 	}
