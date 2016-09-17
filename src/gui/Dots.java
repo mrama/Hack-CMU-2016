@@ -35,7 +35,7 @@ public class Dots extends JFrame implements MouseListener
 	private double scaleFactor = 0.3;
 
 	public Dots() throws IOException
-    {
+	{
 		clicks = 0;
 		dotCoords = new int[4][2];
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,12 +52,10 @@ public class Dots extends JFrame implements MouseListener
 		FileNameExtensionFilter textFileOnlyFilter = new FileNameExtensionFilter(".jpg", "jpg", "jpg");
 		fileChooser.setFileFilter(textFileOnlyFilter);
 		int returnVal = fileChooser.showOpenDialog(new JFrame());
-		if (returnVal == JFileChooser.APPROVE_OPTION) {
-		}
+		if (returnVal == JFileChooser.APPROVE_OPTION) {}
 		file = fileChooser.getSelectedFile();
 		BufferedImage image = ImageIO.read(file);
 		Image resizedImage = image.getScaledInstance((int) (4640 * scaleFactor), (int) (3480 * scaleFactor), Image.SCALE_SMOOTH);
-
 		JLabel lblNewLabel1 = new JLabel(new ImageIcon(resizedImage));
 
 		// 4:3 aspect ratio
