@@ -23,27 +23,6 @@ public class Menu extends JFrame implements ActionListener
 	private boolean multiple;
 	private double height, width;
 
-	public static void main(String[] args)
-	{
-		EventQueue.invokeLater(
-			new Runnable()
-			{
-				public void run()
-				{
-					try
-					{
-						Menu frame = new Menu();
-						frame.setVisible(true);
-					}
-					catch (Exception e)
-					{
-						e.printStackTrace();
-					}
-				}
-			}
-		);
-	}
-
 	public Menu()
 	{
 		height = 0;
