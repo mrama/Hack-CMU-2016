@@ -1,14 +1,16 @@
 MAKEFLAGS += -rRs
+CLASSPATH = .:opencv/build/bin/opencv-2413.jar
+LIBPATH = opencv/build/lib
 
 .PHONY: all clean
 
 all: opencv/build src/Main
 
 %: %.class
-	java $@
+	java -cp $(CLASSPATH) -Djava.library.path=$(LIBPATH) $@
 
 %.class: %.java
-	javac $<
+	javac -cp $(CLASSPATH) $<
 
 opencv/build:
 	cd opencv && \
