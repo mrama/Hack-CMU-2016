@@ -34,7 +34,7 @@ public class Dots extends JFrame implements MouseListener
 	private int[][] dotCoords;
 	private double scaleFactor = 0.3;
 
-	public Dots() throws IOException
+	public Dots()
 	{
 		clicks = 0;
 		dotCoords = new int[4][2];
@@ -53,7 +53,16 @@ public class Dots extends JFrame implements MouseListener
 		fileChooser.setFileFilter(textFileOnlyFilter);
 		int returnVal = fileChooser.showOpenDialog(new JFrame());
 		file = fileChooser.getSelectedFile();
-		BufferedImage image = ImageIO.read(file);
+		BufferedImage image = null;
+		try
+		{
+			image = ImageIO.read(file);
+		}
+		catch (IOException e)
+		{
+			System.err.println("Getting the background image failed");
+			System.exit(1);
+		}
 		Image resizedImage = image.getScaledInstance(
 			(int) (4640 * scaleFactor),
 			(int) (3480 * scaleFactor),

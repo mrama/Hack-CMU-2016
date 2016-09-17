@@ -33,7 +33,7 @@ public class Main
 		posters.setVisible(true);
 	}
 
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args)
 	{
 		Menu menu = new Menu();
 		menu.setVisible(true);
