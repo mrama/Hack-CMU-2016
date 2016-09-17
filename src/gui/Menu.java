@@ -50,39 +50,39 @@ public class Menu extends JFrame implements ActionListener
 		width = 0;
 		multiple = false;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 648, 332);
+		setBounds(425, 250, 448, 310);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		JLabel lblHowBigIs = new JLabel("How big is the rectangle?");
-		lblHowBigIs.setBounds(166, 0, 304, 33);
+		lblHowBigIs.setBounds(150, 0, 304, 33);
 		contentPane.add(lblHowBigIs);
 
 		// tall
 		textField = new JTextField();
-		textField.setBounds(26, 47, 145, 39);
+		textField.setBounds(125, 47, 145, 39);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
 		// wide
 		textField_1 = new JTextField();
-		textField_1.setBounds(26, 116, 145, 39);
+		textField_1.setBounds(125, 116, 145, 39);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 
 		JLabel lblMTall = new JLabel("m tall");
-		lblMTall.setBounds(174, 50, 115, 33);
+		lblMTall.setBounds(300, 50, 115, 33);
 		contentPane.add(lblMTall);
 
 		JLabel lblMWide = new JLabel("m wide");
-		lblMWide.setBounds(174, 119, 115, 33);
+		lblMWide.setBounds(300, 119, 115, 33);
 		contentPane.add(lblMWide);
 
 		btnAddSinglePoster = new JButton("Add Poster");
 		btnAddSinglePoster.addActionListener(this);
-		btnAddSinglePoster.setBounds(26, 195, 190, 41);
+		btnAddSinglePoster.setBounds(135, 188, 190, 41);
 		contentPane.add(btnAddSinglePoster);
 
 	}
