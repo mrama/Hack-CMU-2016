@@ -1,0 +1,97 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Menu extends JFrame implements ActionListener {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JButton btnAddSinglePoster, btnAddMultiplePosters;
+	// true for multiple, false for single
+	private boolean multiple;
+	private double height, width;
+	
+//	/**
+//	 * Launch the application.
+//	 */
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Menu frame = new Menu();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Menu() {
+		height = 0;
+		width = 0;
+		multiple = false;
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 648, 332);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblHowBigIs = new JLabel("How big is the rectangle?");
+		lblHowBigIs.setBounds(166, 0, 304, 33);
+		contentPane.add(lblHowBigIs);
+		
+		// tall
+		textField = new JTextField();
+		textField.setBounds(26, 47, 145, 39);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		// wide
+		textField_1 = new JTextField();
+		textField_1.setBounds(26, 116, 145, 39);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblMTall = new JLabel("m tall");
+		lblMTall.setBounds(174, 50, 115, 33);
+		contentPane.add(lblMTall);
+		
+		JLabel lblMWide = new JLabel("m wide");
+		lblMWide.setBounds(174, 119, 115, 33);
+		contentPane.add(lblMWide);
+		
+		btnAddSinglePoster = new JButton("Add Single Poster");
+		btnAddSinglePoster.addActionListener(this);
+		btnAddSinglePoster.setBounds(26, 193, 241, 41);
+		contentPane.add(btnAddSinglePoster);
+		
+		btnAddMultiplePosters = new JButton("Add Multiple Posters");
+		btnAddMultiplePosters.addActionListener(this);
+		btnAddMultiplePosters.setBounds(336, 193, 273, 41);
+		contentPane.add(btnAddMultiplePosters);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btnAddMultiplePosters)
+			multiple = true;
+		height = Double.parseDouble(textField.getText());
+		width = Double.parseDouble(textField_1.getText());
+		Main.updateMenuVars(height, width, multiple);
+		this.dispose();
+	}
+}
