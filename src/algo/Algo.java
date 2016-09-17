@@ -16,11 +16,7 @@ import org.opencv.core.Size;
 import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
-/** @class Algo
- *  @author Pavel Khokhlov <pkhokhlo@andrew.cmu.edu>
- *  @author Ariel Davis <azdavis@andrew.cmu.edu>
- *  @thanks https://github.com/spmallick/learnopencv/tree/master/Homography
- */
+// @thanks https://github.com/spmallick/learnopencv/tree/master/Homography
 public class Algo
 {
 	public static BufferedImage algo(

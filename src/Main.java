@@ -7,7 +7,6 @@ import src.gui.Menu;
 import src.gui.Posters;
 import src.algo.Algo;
 
-
 public class Main
 {
 	private static BufferedImage processed;
