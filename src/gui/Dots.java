@@ -24,22 +24,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-public class Dots extends JFrame implements MouseListener {
+import src.Main;
 
+public class Dots extends JFrame implements MouseListener
+{
 	private JPanel contentPane;
 	private BufferedImage img;
 	private int clicks;
 	private double[][] dotCoords;
 	private double scaleFactor = 0.3;
 
-	/**
-	 * Create the frame.
-	 *
-	 * @throws IOException
-	 */
-	public Dots() throws IOException {
+	public Dots() throws IOException
+    {
 		clicks = 0;
-		dotCoords = new double[2][4];
+		dotCoords = new double[4][2];
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1620, 1080);
 		contentPane = new JPanel();
@@ -88,15 +86,16 @@ public class Dots extends JFrame implements MouseListener {
 		bGr.drawImage(resizedImage, 0, 0, null);
 		bGr.dispose();
 		ImageIO.write(biToBeWritten, "jpg", file);
-
 	}
 
-	public void mousePressed(MouseEvent e) {
+    // already scales the dot coordinates to native area
+	public void mousePressed(MouseEvent e)
+    {
 		System.out.println("x: " + e.getX());
 		System.out.println("y: " + e.getY());
 
-		dotCoords[0][clicks] = (e.getX() * (1/scaleFactor));
-		dotCoords[1][clicks] = (e.getY() * (1/scaleFactor));
+		dotCoords[clicks][0] = (e.getX() * (1 / scaleFactor));
+		dotCoords[clicks][1] = (e.getY() * (1 / scaleFactor));
 		clicks++;
 
 		if (clicks == 4) {
