@@ -2,7 +2,7 @@ MAKEFLAGS += -rRs
 
 .PHONY: all clean
 
-all: src/Main
+all: opencv/build src/Main
 
 %: %.class
 	java $@
@@ -10,9 +10,11 @@ all: src/Main
 %.class: %.java
 	javac $<
 
-opencv:
+opencv/build:
 	cd opencv && \
-	cmake . && \
+	mkdir build && \
+	cd build && \
+	cmake .. && \
 	$(MAKE) -j8
 
 clean:
