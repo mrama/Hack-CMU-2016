@@ -54,10 +54,12 @@ public class Algo
 		// Calculate homography between source and destination points
 		Mat homog = Calib3d.findHomography(posterPoints, wallPoints);
 		// Warp poster using the homography
-		Imgproc.warpPerspective(posterImg, tmpImg, homog, wallImg.size());
+		Imgproc.warpPerspective(posterImg, tmpImg, homog, tmpImg.size());
+		// Create a resulting image matrix
+		Mat resImg = new Mat();
 		// Add the warped picture to the wall
-		Core.add(wallImg, tmpImg, wallImg);
+		Core.add(wallImg, tmpImg, resImg);
 		// Writes resulting image
-		Highgui.imwrite("src/img/result.jpg", wallImg, new MatOfInt(95));
+		Highgui.imwrite("src/img/result.jpg", resImg, new MatOfInt(95));
 	}
 }
