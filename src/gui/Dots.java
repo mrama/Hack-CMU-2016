@@ -36,6 +36,51 @@ public class Dots extends JFrame implements MouseListener
 	private double scaleFactor = 0.25;
 	private File file = null;
 
+	public Dots(String wallPath)
+	{
+		clicks = 0;
+		dotCoords = new int[4][2];
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0, 0, 1620, 1080);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		BufferedImage image = null;
+		try
+		{
+			file = new File(wallPath);
+			image = ImageIO.read(file);
+		}
+		catch (IOException e)
+		{
+			System.err.println("Getting the background image failed");
+			System.exit(1);
+		}
+		Image resizedImage = image.getScaledInstance(
+			(int) (4640 * scaleFactor),
+			(int) (3480 * scaleFactor),
+			Image.SCALE_SMOOTH
+		);
+		JLabel lblNewLabel1 = new JLabel(new ImageIcon(resizedImage));
+
+		// 4:3 aspect ratio
+		lblNewLabel1.setBounds(
+			0,
+			0,
+			(int) (4640 * scaleFactor),
+			(int) (3480 * scaleFactor)
+		);
+		contentPane.add(lblNewLabel1);
+		addMouseListener(this);
+		JOptionPane.showMessageDialog(
+			null,
+			"Select the four corners of the poster's position " +
+			"clockwise from the top left corner."
+		);
+	}
+
 	public Dots()
 	{
 		clicks = 0;
@@ -54,6 +99,7 @@ public class Dots extends JFrame implements MouseListener
 		fileChooser.setFileFilter(textFileOnlyFilter);
 		fileChooser.showOpenDialog(new JFrame());
 		file = fileChooser.getSelectedFile();
+
 		BufferedImage image = null;
 		try
 		{

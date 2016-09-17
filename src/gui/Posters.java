@@ -16,6 +16,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JOptionPane;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import src.Main;
 
@@ -86,9 +89,22 @@ public class Posters extends JFrame implements ActionListener
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == btnOneMore)
+		if (e.getSource() == btnOneMore)
 		{
-			// TODO
+			JOptionPane.showMessageDialog(
+				null,
+				"Choose a poster image."
+			);
+			JFileChooser fileChooser = new JFileChooser();
+			FileNameExtensionFilter textFileOnlyFilter =
+				new FileNameExtensionFilter(".jpg", "jpg", "jpg");
+			fileChooser.setFileFilter(textFileOnlyFilter);
+			fileChooser.showOpenDialog(new JFrame());
+			File file = fileChooser.getSelectedFile();
+			Main.posterPath = file.getPath();
+			Dots dots = new Dots("src/img/result.jpg"); // should be result path
+			dots.setVisible(true);
+			this.dispose();
 		}
 		else if(e.getSource() == btnStartOver)
 		{
