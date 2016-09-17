@@ -46,7 +46,6 @@ public class Dots extends JFrame implements MouseListener
 		contentPane.setLayout(null);
 
 		// pulls image
-
 		File file = null;
 		JFileChooser fileChooser = new JFileChooser();
 		FileNameExtensionFilter textFileOnlyFilter = new FileNameExtensionFilter(".jpg", "jpg", "jpg");
@@ -67,15 +66,6 @@ public class Dots extends JFrame implements MouseListener
 		);
 		contentPane.add(lblNewLabel1);
 		addMouseListener(this);
-
-		// Create a buffered image with transparency
-		BufferedImage biToBeWritten = new BufferedImage(resizedImage.getWidth(null), resizedImage.getHeight(null), BufferedImage.TYPE_INT_ARGB);
-
-		// Draw the image on to the buffered image
-		Graphics2D bGr = biToBeWritten.createGraphics();
-		bGr.drawImage(resizedImage, 0, 0, null);
-		bGr.dispose();
-		ImageIO.write(biToBeWritten, "jpg", file);
 	}
 
 	// already scales the dot coordinates to native area
