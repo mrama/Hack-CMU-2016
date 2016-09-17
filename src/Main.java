@@ -1,17 +1,37 @@
-public class Main {
+package src;
 
-	private static double height, width;
-	private static boolean multiple;
+import java.io.IOException;
 
-	public static void updateMenuVars(double height, double width, boolean multiple) {
-		Main.height = height;
-		Main.width = width;
-		Main.multiple = multiple;
-		System.out.println(height + ", " + width + ", " + multiple);
-	}
+import src.gui.Dots;
+import src.gui.Menu;
 
-	public static void main(String[] args) {
-		Menu menu = new Menu();
-		menu.setVisible(true);
-	}
+public class Main
+{
+    private static double height, width;
+    private static double[][] dotCoords;
+    private static boolean multiple;
+
+    public static void updateMenuVars(
+        double height,
+        double width,
+        boolean multiple
+    ) {
+        Main.height = height;
+        Main.width = width;
+        Main.multiple = multiple;
+    }
+
+    public static void updateDotsVars(double[][] dotCoords)
+    {
+        Main.dotCoords = dotCoords;
+    }
+
+    public static void main(String[] args) throws IOException
+    {
+        System.out.println(System.getProperty("user.dir"));
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        Dots dots = new Dots();
+        dots.setVisible(true);
+    }
 }
