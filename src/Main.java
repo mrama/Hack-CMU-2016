@@ -9,14 +9,10 @@ import src.algo.Algo;
 
 public class Main
 {
-	private static double height, width;
-	private static int[][] dotCoords;
-	private static boolean multiple;
 	private static BufferedImage processed;
 
 	public static void updateDotsVars(String path, int[][] dotCoords)
 	{
-		Main.dotCoords = dotCoords;
 		Main.processed = Algo.algo(path, dotCoords);
 		Posters posters = new Posters(Main.processed);
 		posters.setVisible(true);

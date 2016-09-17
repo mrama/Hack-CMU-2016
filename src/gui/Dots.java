@@ -51,7 +51,7 @@ public class Dots extends JFrame implements MouseListener
 		FileNameExtensionFilter textFileOnlyFilter =
 			new FileNameExtensionFilter(".jpg", "jpg", "jpg");
 		fileChooser.setFileFilter(textFileOnlyFilter);
-		int returnVal = fileChooser.showOpenDialog(new JFrame());
+		fileChooser.showOpenDialog(new JFrame());
 		file = fileChooser.getSelectedFile();
 		BufferedImage image = null;
 		try
