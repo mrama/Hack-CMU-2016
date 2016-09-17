@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import src.gui.Dots;
 import src.gui.Menu;
+import src.algo.Algo;
 
 public class Main
 {
@@ -24,6 +25,7 @@ public class Main
 	public static void updateDotsVars(int[][] dotCoords)
 	{
 		Main.dotCoords = dotCoords;
+		Algo.algo(dotCoords);
 	}
 
 	public static void main(String[] args) throws IOException
