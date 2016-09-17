@@ -29,39 +29,24 @@ public class Menu extends JFrame implements ActionListener
 		width = 0;
 		multiple = false;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(425, 250, 448, 310);
+		setBounds(425, 250, 448, 200);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblHowBigIs = new JLabel("How big is the rectangle?");
-		lblHowBigIs.setBounds(150, 0, 304, 33);
-		contentPane.add(lblHowBigIs);
+		JLabel welcome
+			= new JLabel("Welcome to PrePoster®.");
+		welcome.setBounds(50, 0, 300, 50);
+		contentPane.add(welcome);
+		JLabel instruct
+			= new JLabel("Please select an image for the background.");
+		instruct.setBounds(50, 20, 300, 50);
+		contentPane.add(instruct);
 
-		// tall
-		textField = new JTextField();
-		textField.setBounds(125, 47, 145, 39);
-		contentPane.add(textField);
-		textField.setColumns(10);
-
-		// wide
-		textField_1 = new JTextField();
-		textField_1.setBounds(125, 116, 145, 39);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-
-		JLabel lblMTall = new JLabel("m tall");
-		lblMTall.setBounds(300, 50, 115, 33);
-		contentPane.add(lblMTall);
-
-		JLabel lblMWide = new JLabel("m wide");
-		lblMWide.setBounds(300, 119, 115, 33);
-		contentPane.add(lblMWide);
-
-		btnAddSinglePoster = new JButton("Add Poster");
+		btnAddSinglePoster = new JButton("OK");
 		btnAddSinglePoster.addActionListener(this);
-		btnAddSinglePoster.setBounds(135, 188, 190, 41);
+		btnAddSinglePoster.setBounds(135, 100, 190, 41);
 		contentPane.add(btnAddSinglePoster);
 	}
 
