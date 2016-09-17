@@ -29,7 +29,7 @@ public class Menu
 	{
 		JOptionPane.showMessageDialog(
 			null,
-			"Welcome to PrePoster®!\n" +
+			"Welcome to PrePoster®! " +
 			"Choose a poster image."
 		);
 		JFileChooser fileChooser = new JFileChooser();

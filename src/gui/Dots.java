@@ -21,6 +21,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -79,6 +80,11 @@ public class Dots extends JFrame implements MouseListener
 		);
 		contentPane.add(lblNewLabel1);
 		addMouseListener(this);
+		JOptionPane.showMessageDialog(
+			null,
+			"Select the four corners of the poster's position " +
+			"clockwise from the top left corner."
+		);
 	}
 
 	// already scales the dot coordinates to native area
