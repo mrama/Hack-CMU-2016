@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import src.gui.Dots;
 import src.gui.Menu;
+import src.gui.Posters;
 import src.algo.Algo;
 
 public class Main
@@ -28,6 +29,8 @@ public class Main
 	{
 		Main.dotCoords = dotCoords;
 		Main.processed = Algo.algo(dotCoords);
+		Posters posters = new Posters(Main.processed);
+		posters.setVisible(true);
 	}
 
 	public static void main(String[] args) throws IOException
