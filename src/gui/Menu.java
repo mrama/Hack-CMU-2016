@@ -40,9 +40,6 @@ public class Menu extends JFrame implements ActionListener
 		);
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Menu()
 	{
 		height = 0;

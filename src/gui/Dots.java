@@ -55,16 +55,8 @@ public class Dots extends JFrame implements MouseListener
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 		}
 		file = fileChooser.getSelectedFile();
-		// String path = file.getAbsolutePath();
 		BufferedImage image = ImageIO.read(file);
 		Image resizedImage = image.getScaledInstance((int) (4640 * scaleFactor), (int) (3480 * scaleFactor), Image.SCALE_SMOOTH);
-		/*
-		 * BufferedImage apple = new BufferedImage(image.getWidth(),
-		 * image.getHeight(), BufferedImage.TYPE_INT_ARGB); AffineTransform at =
-		 * new AffineTransform(); at.scale(0.25, 0.25); AffineTransformOp
-		 * scaleOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
-		 * apple = scaleOp.filter(image, apple);
-		 */
 
 		JLabel lblNewLabel1 = new JLabel(new ImageIcon(resizedImage));
 
