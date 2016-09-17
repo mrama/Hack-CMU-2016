@@ -1,3 +1,13 @@
 # Hack-CMU-2016
 
-Do poster stuff
+visualize some posters
+
+## dependencies
+
+- ant
+- cmake
+- git
+- java
+- jni
+- make
+- opencv
