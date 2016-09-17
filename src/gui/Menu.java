@@ -77,23 +77,16 @@ public class Menu extends JFrame implements ActionListener
 		lblMWide.setBounds(174, 119, 115, 33);
 		contentPane.add(lblMWide);
 
-		btnAddSinglePoster = new JButton("Add Single Poster");
+		btnAddSinglePoster = new JButton("Add Poster");
 		btnAddSinglePoster.addActionListener(this);
-		btnAddSinglePoster.setBounds(26, 193, 241, 41);
+		btnAddSinglePoster.setBounds(26, 195, 190, 41);
 		contentPane.add(btnAddSinglePoster);
 
-		btnAddMultiplePosters = new JButton("Add Multiple Posters");
-		btnAddMultiplePosters.addActionListener(this);
-		btnAddMultiplePosters.setBounds(336, 193, 273, 41);
-		contentPane.add(btnAddMultiplePosters);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-		if (e.getSource() == btnAddMultiplePosters) {
-			multiple = true;
-		}
 		height = Double.parseDouble(textField.getText());
 		width = Double.parseDouble(textField_1.getText());
 		Main.updateMenuVars(height, width, multiple);
