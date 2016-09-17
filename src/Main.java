@@ -28,7 +28,6 @@ public class Main
 
 	public static void main(String[] args) throws IOException
 	{
-		System.out.println(System.getProperty("user.dir"));
 		Menu menu = new Menu();
 		menu.setVisible(true);
 		Dots dots = new Dots();
