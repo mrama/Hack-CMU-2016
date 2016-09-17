@@ -19,7 +19,7 @@ import org.opencv.core.Scalar;
  */
 public class Algo
 {
-    public static void algo()
+    public static void algo(double[][] wallCoords)
     {
         // Load OpenCV
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
@@ -43,10 +43,10 @@ public class Algo
         // Points on the wall where we map the poster
         // top left, top right, bottom left, bottom right
         MatOfPoint2f wallPoints = new MatOfPoint2f(
-            new Point(1457, 1118),
-            new Point(2451, 1302),
-            new Point(1457, 2213),
-            new Point(2451, 2039)
+            new Point(wallCoords[0][0], wallCoords[0][1]),
+            new Point(wallCoords[1][0], wallCoords[1][1]),
+            new Point(wallCoords[2][0], wallCoords[2][1]),
+            new Point(wallCoords[3][0], wallCoords[3][1])
         );
 
         // Clone the wall
