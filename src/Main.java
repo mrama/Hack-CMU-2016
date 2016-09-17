@@ -13,9 +13,9 @@ public class Main
 	private static BufferedImage processed;
 	public static String posterPath;
 
-	public static void updateDotsVars(String path, int[][] dotCoords)
+	public static void updateDotsVars(String wallPath, int[][] dotCoords)
 	{
-		Main.processed = Algo.algo(Main.posterPath, path, dotCoords);
+		Main.processed = Algo.algo(Main.posterPath, wallPath, dotCoords);
 		Posters posters = new Posters(Main.processed);
 		posters.setVisible(true);
 	}
