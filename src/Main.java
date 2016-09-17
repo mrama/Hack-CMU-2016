@@ -1,6 +1,5 @@
-
 public class Main {
-	
+
 	private static double height, width;
 	private static boolean multiple;
 
@@ -10,10 +9,9 @@ public class Main {
 		Main.multiple = multiple;
 		System.out.println(height + ", " + width + ", " + multiple);
 	}
-	
+
 	public static void main(String[] args) {
 		Menu menu = new Menu();
 		menu.setVisible(true);
 	}
-
 }
