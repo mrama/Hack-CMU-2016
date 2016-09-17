@@ -31,13 +31,13 @@ public class Dots extends JFrame implements MouseListener
 	private JPanel contentPane;
 	private BufferedImage img;
 	private int clicks;
-	private double[][] dotCoords;
+	private int[][] dotCoords;
 	private double scaleFactor = 0.3;
 
 	public Dots() throws IOException
     {
 		clicks = 0;
-		dotCoords = new double[4][2];
+		dotCoords = new int[4][2];
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1620, 1080);
 		contentPane = new JPanel();
@@ -80,14 +80,13 @@ public class Dots extends JFrame implements MouseListener
 		ImageIO.write(biToBeWritten, "jpg", file);
 	}
 
-    // already scales the dot coordinates to native area
+	// already scales the dot coordinates to native area
 	public void mousePressed(MouseEvent e)
-    {
-		System.out.println("x: " + e.getX());
-		System.out.println("y: " + e.getY());
-
-		dotCoords[clicks][0] = (e.getX() * (1 / scaleFactor));
-		dotCoords[clicks][1] = (e.getY() * (1 / scaleFactor));
+	{
+		dotCoords[clicks][0] = (int)(e.getX() * (1 / scaleFactor));
+		dotCoords[clicks][1] = (int)(e.getY() * (1 / scaleFactor));
+		System.out.println("x: " + dotCoords[clicks][0]);
+		System.out.println("y: " + dotCoords[clicks][1]);
 		clicks++;
 
 		if (clicks == 4) {

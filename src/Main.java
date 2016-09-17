@@ -8,7 +8,7 @@ import src.gui.Menu;
 public class Main
 {
     private static double height, width;
-    private static double[][] dotCoords;
+    private static int[][] dotCoords;
     private static boolean multiple;
 
     public static void updateMenuVars(
@@ -21,7 +21,7 @@ public class Main
         Main.multiple = multiple;
     }
 
-    public static void updateDotsVars(double[][] dotCoords)
+    public static void updateDotsVars(int[][] dotCoords)
     {
         Main.dotCoords = dotCoords;
     }

@@ -19,7 +19,7 @@ import org.opencv.core.Scalar;
  */
 public class Algo
 {
-    public static void algo(double[][] wallCoords)
+    public static void algo(int[][] wallCoords)
     {
         // Load OpenCV
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
